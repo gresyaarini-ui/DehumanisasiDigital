@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruang Refleksi — Dehumanisasi Digital, Sila ke-2 Pancasila</title>
+<meta name="description" content="Tiga aktivitas singkat untuk merefleksikan bagaimana kamu, secara sadar atau tidak, ikut menentukan rantai kemanusiaan digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Dehumanisasi <span style="font-style:italic;color:var(--gold)">Digital</span> <span class="mark">SILA II</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="nav-link">Beranda</a>
+      <a href="di-balik-angka.html" class="nav-link">Di Balik Angka</a>
+      <a href="nilai-sila-2.html" class="nav-link">Nilai Sila II</a>
+      <a href="ruang-refleksi.html" class="nav-link active">Ruang Refleksi</a>
+      <a href="ruang-eksplorasi.html" class="nav-link">Ruang Eksplorasi</a>
+        <a href="video-upload.html" class="nav-link">Upload Video</a>
+      <a href="komitmen.html" class="nav-link">Komitmen</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">Ruang Refleksi Interaktif — Halaman 04</div>
+    <h1>Tiga Cara untuk Melihat <span class="accent">Dirimu</span> di Balik Layar</h1>
+    <p class="lead">
+      Bukan tes, bukan penilaian, tiga aktivitas ini hanya cermin kecil untuk melihat
+      bagaimana kamu secara sadar atau tidak ikut menentukan apakah rantai kemanusiaan
+      digital tetap utuh atau perlahan terputus.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SECTION: RUANG REFLEKSI ===== -->
+<section id="interaktif" class="section" style="border-top:none;">
+  <div class="wrap">
+
+    <!-- Quiz -->
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="label-tag" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Aktivitas 1 — Refleksi Cepat</div>
+      <h3 style="font-size:1.5rem;margin-bottom:24px;">Apakah kamu bagian dari rantai yang merajut?</h3>
+      <div class="quiz-box">
+        <div id="quizActive">
+          <div class="quiz-top">
+            <span class="quiz-progress-label" id="quizProgress">Pertanyaan 1 / 5</span>
+            <span class="quiz-progress-label" id="quizScoreLabel">Skor: 0 / 5</span>
+          </div>
+          <div class="quiz-bar"><div class="quiz-bar-fill" id="quizBarFill"></div></div>
+          <div class="quiz-q" id="quizQuestion"></div>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <div class="quiz-actions">
+            <button class="btn btn-primary" id="quizNext" disabled>Lanjut</button>
+          </div>
+        </div>
+        <div id="quizResult" class="quiz-result" style="display:none;">
+          <div class="score-big" id="quizFinalScore">0 / 5</div>
+          <p id="quizFinalText"></p>
+          <button class="btn btn-ghost" id="quizRetry">Ulangi Refleksi</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comment simulation -->
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="label-tag" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Aktivitas 2 — Simulasi Balasan</div>
+      <h3 style="font-size:1.5rem;margin-bottom:24px;">Apa yang akan kamu balas?</h3>
+
+      <div class="sim-box">
+        <div class="sim-post">
+          <div class="post-meta">Grup Kelas · Tugas Kelompok</div>
+          <div class="post-body">"Hari ini aku nggak ikut diskusi dulu ya, lagi capek banget secara mental. Maaf kalau jadi nggak bisa bantu bagian tugasku."</div>
+        </div>
+        <div class="sim-prompt">Beberapa teman sudah membalas dengan nada sinis sebelum kamu. Apa balasanmu?</div>
+        <div class="sim-options" data-sim="1">
+          <button class="sim-opt" data-result="bad">"Yaudah deh, tugas kelompok jadi keteteran nih karena kamu."</button>
+          <button class="sim-opt" data-result="neutral">"Oke, gapapa. Nanti aku kerjain bagian aku sendiri aja."</button>
+          <button class="sim-opt" data-result="good">"Nggak apa-apa, istirahat dulu ya. Nanti kalau perlu, bagianmu kita bantu jelasin bareng."</button>
+        </div>
+        <div class="sim-result" id="simResult1"></div>
+      </div>
+
+      <div class="sim-box">
+        <div class="sim-post">
+          <div class="post-meta">Linimasa Publik · Video Pendek</div>
+          <div class="post-body">Sebuah video parodi menyindir cara berdoa salah satu kelompok keagamaan, dengan caption "biar rame doang, jangan baper".</div>
+        </div>
+        <div class="sim-prompt">Video itu lewat di linimasamu dan sudah ditonton ribuan kali. Apa yang kamu lakukan?</div>
+        <div class="sim-options" data-sim="2">
+          <button class="sim-opt" data-result="bad">Membagikan ulang ke story karena dianggap lucu.</button>
+          <button class="sim-opt" data-result="neutral">Scroll lewat saja tanpa berkomentar.</button>
+          <button class="sim-opt" data-result="good">Mengirim pesan pribadi untuk menjelaskan bahwa konten itu bisa menyinggung orang lain.</button>
+        </div>
+        <div class="sim-result" id="simResult2"></div>
+      </div>
+    </div>
+
+    <!-- Poll -->
+    <div class="reveal">
+      <div class="label-tag" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Aktivitas 3 — Jajak Pendapat</div>
+      <h3 style="font-size:1.5rem;margin-bottom:24px;">Menurutmu, kenapa orang gampang "lupa" ada manusia di balik akun lain?</h3>
+      <div class="poll-box">
+        <div class="poll-q">Hasil bersifat sementara dan hanya tersimpan selama halaman ini terbuka di perangkatmu.</div>
+        <button class="poll-opt" data-poll="0">
+          <div class="fill"></div>
+          <div class="content"><span>Merasa anonim, jadi merasa tidak bertanggung jawab</span><span class="pct">0%</span></div>
+        </button>
+        <button class="poll-opt" data-poll="1">
+          <div class="fill"></div>
+          <div class="content"><span>Mengejar validasi — makin pedas, makin banyak perhatian</span><span class="pct">0%</span></div>
+        </button>
+        <button class="poll-opt" data-poll="2">
+          <div class="fill"></div>
+          <div class="content"><span>Ikut-ikutan karena semua orang lain juga begitu</span><span class="pct">0%</span></div>
+        </button>
+        <button class="poll-opt" data-poll="3">
+          <div class="fill"></div>
+          <div class="content"><span>Tidak terbayang dampaknya karena tidak melihat wajah korban secara langsung</span><span class="pct">0%</span></div>
+        </button>
+        <div class="poll-total" id="pollTotal">0 suara terkumpul</div>
+      </div>
+    </div>
+
+  <div class="wrap reveal" style="margin-top: 60px;">
+  <div class="eyebrow">Video Refleksi</div>
+  <h3 style="margin-bottom: 20px;">Jangan-jangan kita pernah terlibat</h3>
+  
+  <!--video YouTube -->
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px;">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/RgzkRTN0ShE?si=adowg1hviB6iC2VC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+  <p style="color: var(--cream-dim); margin-top: 12px; font-size: 0.85rem;">
+    Video: contoh video refleksi jangan jangan kita pernah menjadi perilaku cyberbullying
+  </p>
+</div>
+
+
+    <div class="page-flow reveal">
+      <a href="nilai-sila-2.html" class="prev">
+        <span class="dir-label">Sebelumnya</span>
+        <span class="dir-title">← Nilai Sila II</span>
+      </a>
+      <a href="ruang-eksplorasi.html" class="next">
+        <span class="dir-label">Selanjutnya</span>
+        <span class="dir-title">Ruang Eksplorasi →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-quote">
+        "Sadari, batasi, manusiawi. <span class="accent">Tiga langkah sederhana</span>
+        untuk tidak menjadi robot di dunia maya."
+      </div>
+      <div class="footer-meta">
+        DEHUMANISASI DIGITAL<br>
+        SILA KE-2 — KEMANUSIAAN YANG ADIL DAN BERADAB<br>
+        TUGAS PRAKTIK PENDIDIKAN PANCASILA<br>
+        PROGRAM STUDI TEKNIK KOMPUTER
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Dirancang untuk merefleksikan, bukan untuk menghakimi</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ===== Quiz =====
+const quizData = [
+  {
+    q: "Kamu melihat unggahan teman lama yang sedang viral karena alasan negatif. Apa yang kamu lakukan?",
+    options: [
+      { text: "Ikut berkomentar agar tidak ketinggalan tren", type: "bad", feedback: "Komentar tambahan, sekecil apa pun, menambah beban di pundak satu orang yang sama." },
+      { text: "Diam saja, toh bukan urusanku", type: "neutral", feedback: "Diam memang tidak menambah luka — tapi juga tidak membantu menghentikannya." },
+      { text: "Mengirim pesan pribadi untuk menanyakan keadaannya", type: "good", feedback: "Tepat. Kamu memilih melihatnya sebagai manusia, bukan sebagai bahan tontonan." }
+    ]
+  },
+  {
+    q: "Sebuah grup WhatsApp ramai membahas dan menertawakan kesalahan kecil seseorang. Sikapmu?",
+    options: [
+      { text: "Menambahkan stiker tertawa biar makin seru", type: "bad", feedback: "Tawa kolektif yang terus diberi bahan bakar bisa terasa seperti pengadilan massal bagi yang dibicarakan." },
+      { text: "Keluar dari percakapan tanpa bilang apa-apa", type: "neutral", feedback: "Menjauh dari toksisitas itu sah, tapi orang yang dibahas tetap tidak terbantu." },
+      { text: "Mengingatkan secara halus bahwa orang itu mungkin juga ada di grup yang sama", type: "good", feedback: "Mengingatkan dengan baik bisa menghentikan bola salju sebelum makin besar." }
+    ]
+  },
+  {
+    q: "Kamu membaca berita yang provokatif tapi belum jelas sumbernya. Apa langkahmu?",
+    options: [
+      { text: "Langsung membagikan karena terasa penting untuk diketahui", type: "bad", feedback: "Informasi yang belum diverifikasi bisa menambah angka korban — kali ini korban dari fitnah atau kesalahpahaman." },
+      { text: "Membagikan tapi menulis 'CMIIW'", type: "neutral", feedback: "Niat baik, tapi penyebaran tetap terjadi sebelum kebenarannya dipastikan." },
+      { text: "Mencari sumber resmi sebelum memutuskan membagikan atau tidak", type: "good", feedback: "Memeriksa fakta adalah bentuk tanggung jawab paling sederhana sebelum sebuah klaim menyebar." }
+    ]
+  },
+  {
+    q: "Seseorang yang berbeda pendapat denganmu di kolom komentar mulai terdengar emosional. Responsmu?",
+    options: [
+      { text: "Membalas dengan nada yang lebih tajam supaya 'menang'", type: "bad", feedback: "Perdebatan yang makin tajam sering berakhir dengan dua orang yang sama-sama merasa diserang." },
+      { text: "Berhenti membalas tanpa penjelasan", type: "neutral", feedback: "Menghindari konflik itu wajar, tapi diskusi yang terputus tiba-tiba kadang terasa seperti diabaikan." },
+      { text: "Menanggapi dengan tenang dan mengakui ada sudut pandang lain", type: "good", feedback: "Ketenangan sering jadi alasan sebuah diskusi tetap berada di jalurnya." }
+    ]
+  },
+  {
+    q: "Kamu punya banyak pengikut dan menyadari unggahanmu bisa memengaruhi opini orang lain. Bagaimana kamu menggunakannya?",
+    options: [
+      { text: "Sesekali membuat konten kontroversial karena 'engagement-nya bagus'", type: "bad", feedback: "Engagement yang dibangun dari kemarahan orang lain tetap dibangun di atas sesuatu yang nyata: emosi manusia sungguhan." },
+      { text: "Fokus pada konten netral saja, tidak peduli isu sosial", type: "neutral", feedback: "Netral tidak salah, tapi pengaruh yang dimiliki jadi tidak digunakan untuk hal yang bisa membantu." },
+      { text: "Sesekali menggunakan jangkauan untuk mengajak hal-hal positif", type: "good", feedback: "Pengaruh sekecil apa pun, jika diarahkan dengan sadar, bisa menjadi bagian dari rantai yang merajut." }
+    ]
+  }
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizAnswered = false;
+
+const quizQuestion = document.getElementById('quizQuestion');
+const quizOptions = document.getElementById('quizOptions');
+const quizFeedback = document.getElementById('quizFeedback');
+const quizNext = document.getElementById('quizNext');
+const quizProgress = document.getElementById('quizProgress');
+const quizScoreLabel = document.getElementById('quizScoreLabel');
+const quizBarFill = document.getElementById('quizBarFill');
+const quizActive = document.getElementById('quizActive');
+const quizResult = document.getElementById('quizResult');
+const quizFinalScore = document.getElementById('quizFinalScore');
+const quizFinalText = document.getElementById('quizFinalText');
+const quizRetry = document.getElementById('quizRetry');
+
+function renderQuiz(){
+  quizAnswered = false;
+  const item = quizData[quizIndex];
+  quizQuestion.textContent = item.q;
+  quizOptions.innerHTML = '';
+  quizFeedback.classList.remove('show');
+  quizFeedback.textContent = '';
+  quizNext.disabled = true;
+  quizProgress.textContent = `Pertanyaan ${quizIndex + 1} / ${quizData.length}`;
+  quizScoreLabel.textContent = `Skor: ${quizScore} / ${quizData.length}`;
+  quizBarFill.style.width = `${(quizIndex / quizData.length) * 100}%`;
+
+  item.options.forEach((opt) => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt.text;
+    btn.addEventListener('click', () => {
+      if (quizAnswered) return;
+      quizAnswered = true;
+      const allBtns = quizOptions.querySelectorAll('.quiz-opt');
+      allBtns.forEach(b => b.disabled = true);
+      if (opt.type === 'good'){
+        btn.classList.add('selected-good');
+        quizScore++;
+      } else {
+        btn.classList.add('selected-bad');
+      }
+      quizScoreLabel.textContent = `Skor: ${quizScore} / ${quizData.length}`;
+      quizFeedback.textContent = opt.feedback;
+      quizFeedback.classList.add('show');
+      quizNext.disabled = false;
+    });
+    quizOptions.appendChild(btn);
+  });
+}
+
+quizNext.addEventListener('click', () => {
+  quizIndex++;
+  if (quizIndex >= quizData.length){
+    quizActive.style.display = 'none';
+    quizResult.style.display = 'block';
+    quizFinalScore.textContent = `${quizScore} / ${quizData.length}`;
+    quizBarFill.style.width = '100%';
+    let text;
+    if (quizScore === quizData.length){
+      text = "Setiap responsmu memilih untuk menjaga rantai kemanusiaan tetap utuh. Konsistensi seperti ini, jika dilakukan banyak orang, bisa mengubah suasana ruang digital secara nyata.";
+    } else if (quizScore >= 3){
+      text = "Sebagian besar responsmu sudah mengarah pada empati — namun masih ada momen di mana mata rantai bisa melemah. Tidak masalah, refleksi ini bukan ujian, melainkan pengingat kecil.";
+    } else {
+      text = "Hasil ini bukan untuk menghakimi, melainkan mengajak melihat kembali: pada momen-momen tertentu, mungkin kita lebih mudah melihat angka dan reaksi daripada manusia di baliknya.";
+    }
+    quizFinalText.textContent = text;
+  } else {
+    renderQuiz();
+  }
+});
+
+quizRetry.addEventListener('click', () => {
+  quizIndex = 0;
+  quizScore = 0;
+  quizActive.style.display = 'block';
+  quizResult.style.display = 'none';
+  renderQuiz();
+});
+
+renderQuiz();
+
+// ===== Comment simulation =====
+const simFeedback = {
+  bad: "Balasan seperti ini menambah tekanan pada satu orang yang sama — efeknya menumpuk meski masing-masing komentar terasa kecil.",
+  neutral: "Balasan ini tidak menyakiti, tapi juga belum menjadi dukungan nyata bagi orang yang sedang kesulitan.",
+  good: "Balasan ini mengingatkan bahwa di balik unggahan itu ada manusia yang sedang lelah — dan ia tidak sendirian."
+};
+
+document.querySelectorAll('.sim-options').forEach(group => {
+  const simId = group.dataset.sim;
+  const resultEl = document.getElementById('simResult' + simId);
+  group.querySelectorAll('.sim-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (group.dataset.answered) return;
+      group.dataset.answered = 'true';
+      group.querySelectorAll('.sim-opt').forEach(b => b.disabled = true);
+      btn.classList.add('picked');
+      resultEl.textContent = simFeedback[btn.dataset.result];
+      resultEl.classList.add('show');
+    });
+  });
+});
+
+// ===== Poll =====
+let pollVotes = [0, 0, 0, 0];
+let pollVoted = false;
+const pollOpts = document.querySelectorAll('.poll-opt');
+const pollTotal = document.getElementById('pollTotal');
+
+function renderPoll(){
+  const total = pollVotes.reduce((a,b) => a+b, 0);
+  pollOpts.forEach((opt, i) => {
+    const pct = total === 0 ? 0 : Math.round((pollVotes[i] / total) * 100);
+    opt.querySelector('.fill').style.width = pct + '%';
+    opt.querySelector('.pct').textContent = pct + '%';
+  });
+  pollTotal.textContent = `${total} suara terkumpul`;
+}
+
+pollOpts.forEach((opt) => {
+  opt.addEventListener('click', () => {
+    if (pollVoted) return;
+    pollVoted = true;
+    const idx = parseInt(opt.dataset.poll, 10);
+    pollVotes[idx]++;
+    pollOpts.forEach(o => o.disabled = true);
+    renderPoll();
+  });
+});
+renderPoll();
+</script>
+
+</body>
+</html>

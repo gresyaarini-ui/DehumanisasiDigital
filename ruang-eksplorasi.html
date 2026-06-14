@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruang Eksplorasi — Dehumanisasi Digital, Sila ke-2 Pancasila</title>
+<meta name="description" content="Bangun rantai pilihanmu sendiri lewat enam skenario digital, lalu tuliskan surat refleksi untuk sosok di balik akun lain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Dehumanisasi <span style="font-style:italic;color:var(--gold)">Digital</span> <span class="mark">SILA II</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="nav-link">Beranda</a>
+      <a href="di-balik-angka.html" class="nav-link">Di Balik Angka</a>
+      <a href="nilai-sila-2.html" class="nav-link">Nilai Sila II</a>
+      <a href="ruang-refleksi.html" class="nav-link">Ruang Refleksi</a>
+      <a href="ruang-eksplorasi.html" class="nav-link active">Ruang Eksplorasi</a>
+    <a href="video-upload.html" class="nav-link">Upload Video</a>
+      <a href="komitmen.html" class="nav-link">Komitmen</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">Ruang Eksplorasi Interaktif — Halaman 05</div>
+    <h1>Bangun <span class="accent">Rantaimu</span> Sendiri, Lalu Tuliskan Refleksinya</h1>
+    <p class="lead">
+      Setelah melihat data dan merefleksikan kebiasaan lewat kuis singkat, kini saatnya
+      mencoba dua aktivitas yang lebih personal: menyusun rantai pilihan dari enam situasi
+      nyata, dan menulis surat singkat untuk sosok yang mungkin tidak akan pernah kamu temui
+      secara langsung.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SECTION: RUANG EKSPLORASI ===== -->
+<section id="eksplorasi" class="section" style="border-top:none;">
+  <div class="wrap">
+
+    <!-- Aktivitas 4: Chain builder -->
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="label-tag" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Aktivitas 4 — Rantai Pilihanmu</div>
+      <h3 style="font-size:1.5rem;margin-bottom:24px;">Enam situasi, enam keputusan, rantai macam apa yang kamu susun?</h3>
+      <p style="color:var(--cream-dim);margin-bottom:28px;max-width:680px;">
+        Setiap situasi di bawah ini punya dua jalan: satu yang <em>memutus</em> rantai
+        kemanusiaan, satu yang <em>merajut</em>nya. Tidak ada jawaban yang dipaksakan benar
+        atau salah pilih saja yang paling mendekati kemungkinan dirimu, lalu lihat rantai
+        yang terbentuk di akhir.
+      </p>
+
+      <div class="builder-box">
+        <div id="builderActive">
+          <div class="builder-top">
+            <span class="quiz-progress-label" id="builderProgress">Skenario 1 / 6</span>
+            <span class="quiz-progress-label" id="builderScoreLabel">Merajut: 0 / 6</span>
+          </div>
+          <div class="quiz-bar"><div class="quiz-bar-fill" id="builderBarFill"></div></div>
+
+          <div class="builder-scenario">
+            <div class="scenario-label" id="builderLabel">SKENARIO 01</div>
+            <div class="scenario-text" id="builderText"></div>
+            <div class="builder-choices" id="builderChoices"></div>
+            <div class="builder-feedback" id="builderFeedback"></div>
+          </div>
+
+          <div class="builder-actions">
+            <button class="btn btn-primary" id="builderNext" disabled>Lanjut</button>
+          </div>
+
+          <div class="chain-progress">
+            <div class="chain-progress-label">Rantai yang sedang kamu susun</div>
+            <div class="chain-links-row" id="chainLinksRow"></div>
+          </div>
+        </div>
+
+        <div id="builderResult" class="builder-result" style="display:none;">
+          <div class="score-big" id="builderFinalScore">0 / 6</div>
+          <p id="builderFinalText"></p>
+          <div class="chain-progress" style="border-top:none;padding-top:0;">
+            <div class="chain-progress-label">Rantai akhirmu</div>
+            <div class="chain-links-row" id="chainLinksRowFinal" style="justify-content:center;margin-bottom:24px;"></div>
+          </div>
+          <button class="btn btn-ghost" id="builderRetry">Susun Ulang Rantai</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aktivitas 5: Letter -->
+    <div class="reveal">
+      <div class="label-tag" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Aktivitas 5 — Surat Refleksi</div>
+      <h3 style="font-size:1.5rem;margin-bottom:24px;">Surat untuk sosok di balik akun lain</h3>
+      <div class="letter-box">
+        <div class="letter-prompt">
+          Bayangkan ada seseorang di ujung koneksi internet yang lain orang asing yang
+          mungkin pernah kamu komentari, atau bahkan dirimu sendiri di masa depan. Tuliskan
+          satu pesan singkat tentang bagaimana kamu ingin memperlakukan, dan ingin
+          diperlakukan, sebagai manusia di ruang digital.
+        </div>
+        <textarea
+          class="letter-textarea"
+          id="letterText"
+          placeholder="Contoh: Aku ingin mulai berpikir sebelum mengetik, terutama saat sedang kesal. Aku juga ingin diingatkan bahwa di balik setiap akun, ada seseorang yang sedang menjalani harinya sendiri..."
+        ></textarea>
+        <div class="letter-meta">
+          <span id="letterCount">0 kata · 0 karakter</span>
+          <span>Tulisanmu tidak dikirim ke mana pun hanya untukmu.</span>
+        </div>
+        <div class="letter-actions">
+          <button class="btn btn-primary" id="letterDownload">Unduh sebagai Catatan (.txt)</button>
+          <button class="btn btn-ghost" id="letterClear">Bersihkan</button>
+        </div>
+        <div class="letter-saved" id="letterSaved">
+          Catatanmu telah diunduh. Simpan ini sebagai pengingat kecil untuk dirimu sendiri —
+          terutama pada hari-hari saat ruang digital terasa melelahkan.
+        </div>
+      </div>
+    </div>
+
+    <div class="page-flow reveal">
+      <a href="ruang-refleksi.html" class="prev">
+        <span class="dir-label">Sebelumnya</span>
+        <span class="dir-title">← Ruang Refleksi</span>
+      </a>
+      <a href="komitmen.html" class="next">
+        <span class="dir-label">Selanjutnya</span>
+        <span class="dir-title">Komitmen →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-quote">
+        "Rajut rantai empatimu, <span class="accent">goreskan refleksimu</span>.
+        Jangan biarkan duniamu digerakkan oleh algoritma."
+      </div>
+      <div class="footer-meta">
+        DEHUMANISASI DIGITAL<br>
+        SILA KE-2 — KEMANUSIAAN YANG ADIL DAN BERADAB<br>
+        TUGAS PRAKTIK PENDIDIKAN PANCASILA<br>
+        PROGRAM STUDI TEKNIK KOMPUTER
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Dirancang untuk merefleksikan, bukan untuk menghakimi</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ===== Aktivitas 4: Rantai Pilihanmu (chain builder) =====
+const builderData = [
+  {
+    text: "Teman mengirim pesan curhat panjang larut malam, sementara kamu sendiri sedang sangat lelah dan ingin segera tidur.",
+    choices: [
+      { tag: "Merajut Rantai", type: "merajut", text: "Membalas singkat bahwa kamu sedang istirahat, dan akan membaca serta merespons lebih lengkap besok pagi.", feedback: "Memberi tahu dengan jujur tetap menjaga rasa didengar, meski responsmu belum lengkap saat itu." },
+      { tag: "Memutus Rantai", type: "memutus", text: "Membaca sekilas, lalu membalas dengan stiker tanpa benar-benar membacanya.", feedback: "Balasan otomatis seperti ini bisa membuat orang yang curhat merasa ceritanya tidak benar-benar didengar." }
+    ]
+  },
+  {
+    text: "Sebuah akun anonim mengirim pesan yang menghina penampilanmu di kolom pesan pribadi.",
+    choices: [
+      { tag: "Memutus Rantai", type: "memutus", text: "Membalas dengan hinaan yang setara, supaya 'tidak kalah'.", feedback: "Balasan setara tetap menambah satu komentar kasar lagi ke dunia — kali ini darimu." },
+      { tag: "Merajut Rantai", type: "merajut", text: "Memblokir dan melaporkan akun tersebut tanpa membalas hinaannya.", feedback: "Memutus jalur komunikasi dengan tenang menghentikan eskalasi tanpa menambah kekerasan verbal baru." }
+    ]
+  },
+  {
+    text: "Kamu menemukan unggahan lama temanmu yang terlihat memalukan dan masih bisa dilihat oleh siapa saja.",
+    choices: [
+      { tag: "Merajut Rantai", type: "merajut", text: "Memberi tahu temanmu secara pribadi, agar ia bisa menghapus atau mengatur unggahan itu jadi privat.", feedback: "Memberi tahu secara pribadi memberi orang itu kendali atas jejak digitalnya sendiri." },
+      { tag: "Memutus Rantai", type: "memutus", text: "Menandai beberapa teman lain di kolom komentar agar ikut menertawakannya.", feedback: "Menandai orang lain mengubah satu kenangan pribadi menjadi tontonan baru bagi orang yang tidak terlibat." }
+    ]
+  },
+  {
+    text: "Di sebuah forum daring, seseorang dari latar belakang budaya atau agama yang berbeda menyampaikan pendapat yang terasa asing bagimu.",
+    choices: [
+      { tag: "Memutus Rantai", type: "memutus", text: "Mengabaikan pendapatnya sambil berpikir 'orang seperti itu memang begitu'.", feedback: "Generalisasi semacam ini membuat satu suara berdiri sebagai wakil seluruh kelompoknya — bukan sebagai individu." },
+      { tag: "Merajut Rantai", type: "merajut", text: "Bertanya lebih lanjut untuk memahami sudut pandangnya sebelum menanggapi.", feedback: "Bertanya membuka ruang bagi perbedaan untuk dipahami, bukan sekadar dihakimi." }
+    ]
+  },
+  {
+    text: "Sebuah video menunjukkan seseorang melakukan kesalahan kecil di tempat umum, dan videonya mulai menyebar luas.",
+    choices: [
+      { tag: "Merajut Rantai", type: "merajut", text: "Tidak mengunduh atau membagikannya, karena video itu bisa mengubah hidup orang di dalamnya untuk waktu yang lama.", feedback: "Tidak ikut menyebarkan adalah bentuk paling sederhana dari menjaga martabat orang lain." },
+      { tag: "Memutus Rantai", type: "memutus", text: "Mengunduh videonya untuk disimpan sebagai 'koleksi konten lucu'.", feedback: "Menyimpan dan menyebarkannya kembali membuat satu momen buruk seseorang menjadi abadi di luar kendalinya." }
+    ]
+  },
+  {
+    text: "Di kolom komentar sebuah unggahan yang berat, kamu melihat orang-orang asing saling menguatkan satu sama lain.",
+    choices: [
+      { tag: "Memutus Rantai", type: "memutus", text: "Melewatinya saja, karena momen itu terasa bukan urusanmu.", feedback: "Tidak ada yang salah dengan diam — tapi rantai dukungan itu juga tidak bertambah panjang karenamu." },
+      { tag: "Merajut Rantai", type: "merajut", text: "Menambahkan satu kalimat dukungan singkat, ikut menjadi bagian dari rantai itu.", feedback: "Satu kalimat tambahan bisa jadi yang dibaca berulang kali oleh orang yang membutuhkannya." }
+    ]
+  }
+];
+
+let builderIndex = 0;
+let builderScore = 0;
+let builderAnswered = false;
+let builderChainTypes = [];
+
+const builderProgress = document.getElementById('builderProgress');
+const builderScoreLabel = document.getElementById('builderScoreLabel');
+const builderBarFill = document.getElementById('builderBarFill');
+const builderLabel = document.getElementById('builderLabel');
+const builderText = document.getElementById('builderText');
+const builderChoices = document.getElementById('builderChoices');
+const builderFeedback = document.getElementById('builderFeedback');
+const builderNext = document.getElementById('builderNext');
+const builderActive = document.getElementById('builderActive');
+const builderResult = document.getElementById('builderResult');
+const builderFinalScore = document.getElementById('builderFinalScore');
+const builderFinalText = document.getElementById('builderFinalText');
+const builderRetry = document.getElementById('builderRetry');
+const chainLinksRow = document.getElementById('chainLinksRow');
+const chainLinksRowFinal = document.getElementById('chainLinksRowFinal');
+
+function renderBuilder(){
+  builderAnswered = false;
+  const item = builderData[builderIndex];
+  const num = String(builderIndex + 1).padStart(2, '0');
+  builderLabel.textContent = `SKENARIO ${num}`;
+  builderText.textContent = item.text;
+  builderChoices.innerHTML = '';
+  builderFeedback.classList.remove('show');
+  builderFeedback.textContent = '';
+  builderNext.disabled = true;
+  builderProgress.textContent = `Skenario ${builderIndex + 1} / ${builderData.length}`;
+  builderScoreLabel.textContent = `Merajut: ${builderScore} / ${builderData.length}`;
+  builderBarFill.style.width = `${(builderIndex / builderData.length) * 100}%`;
+
+  item.choices.forEach((choice) => {
+    const btn = document.createElement('button');
+    btn.className = 'builder-choice ' + choice.type;
+    const tagSpan = document.createElement('span');
+    tagSpan.className = 'choice-tag';
+    tagSpan.textContent = choice.tag;
+    btn.appendChild(tagSpan);
+    btn.appendChild(document.createTextNode(choice.text));
+    btn.addEventListener('click', () => {
+      if (builderAnswered) return;
+      builderAnswered = true;
+      const allBtns = builderChoices.querySelectorAll('.builder-choice');
+      allBtns.forEach(b => b.disabled = true);
+      btn.classList.add('picked');
+
+      if (choice.type === 'merajut') builderScore++;
+      builderChainTypes.push(choice.type);
+      builderScoreLabel.textContent = `Merajut: ${builderScore} / ${builderData.length}`;
+
+      const piece = document.createElement('div');
+      piece.className = 'chain-link-piece ' + (choice.type === 'merajut' ? 'gold' : 'rust');
+      piece.textContent = num;
+      chainLinksRow.appendChild(piece);
+
+      builderFeedback.textContent = choice.feedback;
+      builderFeedback.classList.add('show');
+      builderNext.disabled = false;
+    });
+    builderChoices.appendChild(btn);
+  });
+}
+
+builderNext.addEventListener('click', () => {
+  builderIndex++;
+  if (builderIndex >= builderData.length){
+    builderActive.style.display = 'none';
+    builderResult.style.display = 'block';
+    builderFinalScore.textContent = `${builderScore} / ${builderData.length}`;
+    builderBarFill.style.width = '100%';
+
+    chainLinksRowFinal.innerHTML = '';
+    builderChainTypes.forEach((type, i) => {
+      const piece = document.createElement('div');
+      piece.className = 'chain-link-piece ' + (type === 'merajut' ? 'gold' : 'rust');
+      piece.textContent = String(i + 1).padStart(2, '0');
+      chainLinksRowFinal.appendChild(piece);
+    });
+
+    let text;
+    if (builderScore === builderData.length){
+      text = "Pada keenam situasi, kamu memilih jalan yang merajut rantai. Ini bukan soal menjadi sempurna setiap saat, melainkan menunjukkan bahwa pilihan-pilihan kecil itu memang bisa diambil secara konsisten — dan jika banyak orang melakukannya, suasana sebuah ruang digital bisa terasa berbeda.";
+    } else if (builderScore >= 4){
+      text = "Sebagian besar pilihanmu mengarah pada merajut rantai. Masih ada momen di mana memutus terasa lebih ringan atau lebih cepat — hal itu manusiawi, dan bisa jadi pengingat untuk situasi serupa di kemudian hari.";
+    } else if (builderScore >= 2){
+      text = "Rantaimu terbagi cukup rata antara merajut dan memutus. Ini bukan untuk dihakimi — justru di sinilah letak gunanya melihat polanya: pada situasi seperti apa kamu cenderung memilih jalan yang lebih ringan untuk dirimu sendiri?";
+    } else {
+      text = "Sebagian besar pilihanmu cenderung memutus rantai pada skenario-skenario ini. Bukan sebagai tuduhan, melainkan undangan untuk berhenti sejenak: pada situasi nyata yang serupa, jalan mana yang sebenarnya ingin kamu ambil?";
+    }
+    builderFinalText.textContent = text;
+  } else {
+    renderBuilder();
+  }
+});
+
+builderRetry.addEventListener('click', () => {
+  builderIndex = 0;
+  builderScore = 0;
+  builderChainTypes = [];
+  chainLinksRow.innerHTML = '';
+  builderActive.style.display = 'block';
+  builderResult.style.display = 'none';
+  renderBuilder();
+});
+
+renderBuilder();
+
+// ===== Aktivitas 5: Surat Refleksi =====
+const letterText = document.getElementById('letterText');
+const letterCount = document.getElementById('letterCount');
+const letterDownload = document.getElementById('letterDownload');
+const letterClear = document.getElementById('letterClear');
+const letterSaved = document.getElementById('letterSaved');
+
+function updateLetterCount(){
+  const value = letterText.value.trim();
+  const words = value.length === 0 ? 0 : value.split(/\s+/).length;
+  const chars = letterText.value.length;
+  letterCount.textContent = `${words} kata · ${chars} karakter`;
+}
+letterText.addEventListener('input', () => {
+  updateLetterCount();
+  letterSaved.classList.remove('show');
+});
+updateLetterCount();
+
+letterDownload.addEventListener('click', () => {
+  const content = letterText.value.trim();
+  if (!content) {
+    letterText.focus();
+    return;
+  }
+  const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'surat-refleksi-sila-2.txt';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  letterSaved.classList.add('show');
+});
+
+letterClear.addEventListener('click', () => {
+  letterText.value = '';
+  updateLetterCount();
+  letterSaved.classList.remove('show');
+  letterText.focus();
+});
+</script>
+
+</body>
+</html>

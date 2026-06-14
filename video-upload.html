@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Upload Video — Dehumanisasi Digital, Sila ke-2 Pancasila</title>
+<meta name="description" content="Bagikan cerita atau refleksimu melalui video. Setiap suara berhak didengar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Dehumanisasi <span style="font-style:italic;color:var(--gold)">Digital</span> <span class="mark">SILA II</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="nav-link">Beranda</a>
+      <a href="di-balik-angka.html" class="nav-link">Di Balik Angka</a>
+      <a href="nilai-sila-2.html" class="nav-link">Nilai Sila II</a>
+      <a href="ruang-refleksi.html" class="nav-link">Ruang Refleksi</a>
+      <a href="ruang-eksplorasi.html" class="nav-link">Ruang Eksplorasi</a>
+      <a href="video-upload.html" class="nav-link active">Upload Video</a>
+      <a href="komitmen.html" class="nav-link">Komitmen</a>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">Bagikan Ceritamu — Halaman 06</div>
+    <h1>Setiap <span class="accent">Suara</span> Berhak Didengar</h1>
+    <p class="lead">
+      Kamu bisa mengunggah video pendek tentang refleksimu terhadap dehumanisasi digital,
+      atau berbagi cerita tentang bagaimana kamu menjaga kemanusiaan di ruang digital.
+      Setiap video adalah pengingat bahwa di balik layar, ada manusia sungguhan.
+    </p>
+  </div>
+</section>
+
+<section id="video-upload" class="section" style="border-top:none;">
+  <div class="wrap">
+    <div class="upload-container reveal">
+      
+      <!-- Bagian Upload -->
+      <div class="upload-box">
+        <h3 style="margin-bottom: 24px;">📤 Upload Video Refleksi</h3>
+        <div class="upload-area" id="uploadArea">
+          <div class="upload-icon">📹</div>
+          <div class="upload-text">
+            Klik atau seret file video ke sini<br>
+            <strong>MP4, WebM, atau OGG</strong> (maks. 50MB)
+          </div>
+        </div>
+        <input type="file" id="videoInput" accept="video/*" class="file-input">
+        
+        <div id="videoPreview" class="video-preview" style="display:none;">
+          <video id="previewVideo" controls></video>
+          <input type="text" id="videoTitle" class="video-title-input" placeholder="Judul video (opsional)" maxlength="100">
+          <button id="confirmUpload" class="btn btn-primary upload-btn">✨ Unggah Video</button>
+        </div>
+        
+        <div id="uploadMessage" style="margin-top: 16px; font-size: 0.85rem; color: var(--cream-dim); text-align: center;"></div>
+      </div>
+      
+      <!-- Galeri Video -->
+      <div class="video-gallery">
+        <h3 style="margin-bottom: 24px;">🎬 Video Refleksi dari Komunitas</h3>
+        <div id="videoGalleryList">
+          <div class="empty-gallery">
+            Belum ada video yang diunggah.<br>
+            Jadilah yang pertama berbagi cerita!
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="page-flow reveal">
+      <a href="ruang-eksplorasi.html" class="prev">
+        <span class="dir-label">Sebelumnya</span>
+        <span class="dir-title">← Ruang Eksplorasi</span>
+      </a>
+      <a href="komitmen.html" class="next">
+        <span class="dir-label">Selanjutnya</span>
+        <span class="dir-title">Komitmen →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-quote">
+        "Jangan biarkan algoritma membungkam cerita. <span class="accent">Setiap suara</span>
+        punya hak untuk bermakna."
+      </div>
+      <div class="footer-meta">
+        DEHUMANISASI DIGITAL<br>
+        SILA KE-2 — KEMANUSIAAN YANG ADIL DAN BERADAB<br>
+        TUGAS PRAKTIK PENDIDIKAN PANCASILA<br>
+        PROGRAM STUDI TEKNIK KOMPUTER
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Dirancang untuk merefleksikan, bukan untuk menghakimi</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ===== VIDEO UPLOAD SYSTEM =====
+// Menggunakan localStorage untuk menyimpan video
+
+let videos = [];
+
+// Load videos dari localStorage
+function loadVideos() {
+  const stored = localStorage.getItem('reflection_videos');
+  if (stored) {
+    try {
+      videos = JSON.parse(stored);
+    } catch(e) { videos = []; }
+  }
+  renderGallery();
+}
+
+// Simpan videos ke localStorage
+function saveVideos() {
+  localStorage.setItem('reflection_videos', JSON.stringify(videos));
+  renderGallery();
+}
+
+// Render galeri video
+function renderGallery() {
+  const gallery = document.getElementById('videoGalleryList');
+  if (!gallery) return;
+  
+  if (videos.length === 0) {
+    gallery.innerHTML = '<div class="empty-gallery">📭 Belum ada video yang diunggah.<br>Jadilah yang pertama berbagi cerita!</div>';
+    return;
+  }
+  
+  gallery.innerHTML = '';
+  videos.forEach((video, index) => {
+    const videoCard = document.createElement('div');
+    videoCard.className = 'video-card';
+    videoCard.innerHTML = `
+      <video src="${video.dataURL}" controls></video>
+      <h4>${escapeHtml(video.title) || 'Video Refleksi'}</h4>
+      <div class="video-meta">Diunggah: ${video.date}</div>
+      <button class="delete-video" data-index="${index}">🗑 Hapus</button>
+    `;
+    gallery.appendChild(videoCard);
+  });
+  
+  // Tambahkan event listener untuk tombol hapus
+  document.querySelectorAll('.delete-video').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const index = parseInt(btn.dataset.index);
+      videos.splice(index, 1);
+      saveVideos();
+    });
+  });
+}
+
+// Escape HTML untuk keamanan
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
+  });
+}
+
+// Upload area handlers
+const uploadArea = document.getElementById('uploadArea');
+const videoInput = document.getElementById('videoInput');
+const videoPreview = document.getElementById('videoPreview');
+const previewVideo = document.getElementById('previewVideo');
+const videoTitle = document.getElementById('videoTitle');
+const confirmUpload = document.getElementById('confirmUpload');
+const uploadMessage = document.getElementById('uploadMessage');
+
+let selectedFile = null;
+
+if (uploadArea) {
+  uploadArea.addEventListener('click', () => videoInput.click());
+  
+  uploadArea.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    uploadArea.classList.add('drag-over');
+  });
+  
+  uploadArea.addEventListener('dragleave', () => {
+    uploadArea.classList.remove('drag-over');
+  });
+  
+  uploadArea.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadArea.classList.remove('drag-over');
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('video/')) {
+      handleFile(file);
+    } else {
+      uploadMessage.textContent = '❌ Harap unggah file video yang valid.';
+    }
+  });
+}
+
+if (videoInput) {
+  videoInput.addEventListener('change', (e) => {
+    if (e.target.files && e.target.files[0]) {
+      handleFile(e.target.files[0]);
+    }
+  });
+}
+
+function handleFile(file) {
+  // Cek ukuran file (maks 50MB)
+  if (file.size > 50 * 1024 * 1024) {
+    uploadMessage.textContent = '❌ Ukuran file terlalu besar. Maksimal 50MB.';
+    return;
+  }
+  
+  selectedFile = file;
+  const url = URL.createObjectURL(file);
+  previewVideo.src = url;
+  videoPreview.style.display = 'block';
+  uploadMessage.textContent = '';
+  videoTitle.value = '';
+}
+
+if (confirmUpload) {
+  confirmUpload.addEventListener('click', () => {
+    if (!selectedFile) {
+      uploadMessage.textContent = '❌ Pilih video terlebih dahulu.';
+      return;
+    }
+    
+    uploadMessage.textContent = '📤 Mengunggah video...';
+    confirmUpload.disabled = true;
+    
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const videoData = {
+        id: Date.now(),
+        title: videoTitle.value.trim() || 'Video Refleksi',
+        dataURL: e.target.result,
+        date: new Date().toLocaleDateString('id-ID'),
+        size: selectedFile.size
+      };
+      
+      videos.unshift(videoData); // Tambah di awal
+      saveVideos();
+      
+      // Reset form
+      selectedFile = null;
+      videoPreview.style.display = 'none';
+      previewVideo.src = '';
+      videoTitle.value = '';
+      videoInput.value = '';
+      confirmUpload.disabled = false;
+      uploadMessage.textContent = '✅ Video berhasil diunggah! Terima kasih telah berbagi.';
+      
+      setTimeout(() => {
+        uploadMessage.textContent = '';
+      }, 3000);
+    };
+    
+    reader.onerror = function() {
+      uploadMessage.textContent = '❌ Gagal membaca file. Silakan coba lagi.';
+      confirmUpload.disabled = false;
+    };
+    
+    reader.readAsDataURL(selectedFile);
+  });
+}
+
+// Load videos saat halaman dimuat
+loadVideos();
+</script>
+
+</body>
+</html>

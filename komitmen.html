@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Komitmen — Dehumanisasi Digital, Sila ke-2 Pancasila</title>
+<meta name="description" content="Pancasila bukan hafalan, tetapi cara memperlakukan sesama. Nyatakan komitmenmu untuk menjaga rantai kemanusiaan di ruang digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="index.html" class="brand">Dehumanisasi <span style="font-style:italic;color:var(--gold)">Digital</span> <span class="mark">SILA II</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <nav class="links" id="navLinks">
+      <a href="index.html" class="nav-link">Beranda</a>
+      <a href="di-balik-angka.html" class="nav-link">Di Balik Angka</a>
+      <a href="nilai-sila-2.html" class="nav-link">Nilai Sila II</a>
+      <a href="ruang-refleksi.html" class="nav-link">Ruang Refleksi</a>
+      <a href="ruang-eksplorasi.html" class="nav-link">Ruang Eksplorasi</a>
+      <a href="komitmen.html" class="nav-link active">Komitmen</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="wrap reveal">
+    <div class="eyebrow">Kesimpulan & Penutup — Halaman 06</div>
+    <h1>Pancasila Bukan Hafalan, Tetapi Cara <span class="accent">Memperlakukan</span> Sesama</h1>
+    <p class="lead">
+      Pada akhirnya, dunia digital hanyalah sebuah medium, namun cara kita bertingkah laku di dalamnya adalah cerminan utuh dari kemanusiaan kita yang sesungguhnya. Ketika layar ponsel cenderung mereduksi sesama menjadi sekadar angka dan statistik yang dingin, Pancasila khususnya Sila ke-2 hadir bukan sebagai teks hafalan yang kaku, melainkan sebagai kompas moral yang hidup.Kita tidak dapat mengendalikan jari jemari orang lain di ruang siber, namun kita sepenuhnya berkuasa atas bagaimana diri sendiri merespons. Seuntai komentar yang santun, kehati-hatian dalam menyaring informasi sebelum mebagikannya, serta validasi empati yang berbentuk sekecil apa pun kepada mereka yang rapuh adalah bentuk manifestasi nyata dari <strong>Kemanusiaan yang Adil dan Beradab</strong>.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SECTION: KOMITMEN ===== -->
+<section id="komitmen" class="section" style="border-top:none;">
+  <div class="wrap">
+
+    <div class="pledge-box reveal" id="pledgeBox">
+      <div id="pledgeCounterWrap">
+        <div class="pledge-counter" id="pledgeCounter">1 jt</div>
+        <div class="pledge-counter-label">Orang Telah Berkomitmen, mari ikut berkomitem bersama kami</div>
+      </div>
+      <div class="pledge-statement" id="pledgeStatement">
+        "Saya berkomitmen untuk menimbang rasa sebelum merangkai kata, menghargai setiap jiwa di balik layar digital, dan memanusiakan sesama sebagaimana saya ingin dihargai"
+      </div>
+      <button class="btn btn-primary" id="pledgeBtn">Saya Berkomitmen</button>
+    </div>
+
+    <div class="page-flow reveal">
+      <a href="ruang-eksplorasi.html" class="prev">
+        <span class="dir-label">Sebelumnya</span>
+        <span class="dir-title">← Ruang Eksplorasi</span>
+      </a>
+      <a href="index.html" class="next">
+        <span class="dir-label">Kembali</span>
+        <span class="dir-title">Beranda →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-quote">
+        "Pancasila hidup dalam tindakan, bukan sekedar hafalan. <span class="accent">Mari memanusiakan sesama</span>
+        diruang digital."
+      </div>
+      <div class="footer-meta">
+        DEHUMANISASI DIGITAL<br>
+        SILA KE-2 — KEMANUSIAAN YANG ADIL DAN BERADAB<br>
+        TUGAS PRAKTIK PENDIDIKAN PANCASILA<br>
+        PROGRAM STUDI TEKNIK KOMPUTER
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>2026 Dirancang untuk merefleksikan, bukan untuk menghakimi</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// ===== Pledge counter =====
+const pledgeBtn = document.getElementById('pledgeBtn');
+const pledgeCounter = document.getElementById('pledgeCounter');
+const pledgeBox = document.getElementById('pledgeBox');
+let pledgeCount = 128;
+let pledged = false;
+
+pledgeBtn.addEventListener('click', () => {
+  if (pledged) return;
+  pledged = true;
+  pledgeCount++;
+  pledgeCounter.textContent = pledgeCount;
+  pledgeBox.classList.add('done');
+  pledgeBtn.textContent = '✓ Kamu Sudah Berkomitmen';
+  pledgeBtn.disabled = true;
+  pledgeBtn.style.opacity = '0.7';
+  pledgeBtn.style.cursor = 'default';
+});
+</script>
+
+</body>
+</html>
